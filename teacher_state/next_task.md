@@ -2,29 +2,18 @@
 
 ## Task
 
-Read `student_lessons/unittest_basics.md`, then come back and explain these five items in your own words:
+Erstelle eine Datei `js_find_user.js` im Ordner `javascript_baseline/`.
 
-- what `import` does across files
-- what `unittest` is for
-- why the test file uses a `class`
-- what `self` means inside test methods
-- what `self.assertEqual(actual, expected)` checks
+1. Lese die Datei `users.json` ein.
+2. Suche nach dem Benutzer mit der `id: 5`.
+3. Gib seinen Namen und seine Stadt (`address.city`) in der Konsole aus.
 
 ## Goal
-
-Use the new lesson shelf to teach the minimum test-file concepts before independent test writing.
+Vertiefung der Datenmanipulation und Navigation in verschachtelten Objekten nach dem Auslesen einer Datei.
 
 ## Success Condition
-
-- The student can explain each of the five items above in plain English.
-- The student can connect their explanation back to the example in `student_lessons/unittest_basics.md`.
+- Der Name und die Stadt von Benutzer 5 werden korrekt ausgegeben.
+- Der Code nutzt eine effiziente Methode zum Suchen (z.B. `.find()`).
 
 ## Why This Is Next
-
-- The previous next task assumed testing concepts that the student has not yet been taught.
-- The right next move is to read the new stored lesson first, then explain it back before independent test writing.
-
-## Evidence This Will Produce
-
-- Whether the student is ready to move from plain function-writing into basic test-file structure
-- Which test-framework concepts need explicit teaching before independent practice
+Das bloße Auslesen einer Liste ist der Anfang. In echten Anwendungen muss man oft gezielt nach Informationen suchen. Diese Aufgabe kombiniert Dateizugriff mit Logik.

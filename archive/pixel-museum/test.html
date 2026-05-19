@@ -1,0 +1,328 @@
+
+
+
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>ArtArchive | Digital Museum</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#caeefa",
+                        "on-secondary-fixed-variant": "#5f4116",
+                        "inverse-surface": "#10353e",
+                        "error": "#ba1a1a",
+                        "primary-container": "#008282",
+                        "secondary-fixed": "#ffddb6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#c4e8f5",
+                        "secondary-container": "#fdcf98",
+                        "tertiary-fixed": "#ffd9e1",
+                        "on-tertiary-fixed-variant": "#673947",
+                        "on-surface-variant": "#3d4949",
+                        "surface-container-low": "#e2f7ff",
+                        "secondary-fixed-dim": "#ebbf89",
+                        "on-tertiary-container": "#461c2a",
+                        "on-primary-container": "#f3fffe",
+                        "inverse-primary": "#61d8d8",
+                        "primary-fixed": "#7ff5f4",
+                        "tertiary-container": "#bb8190",
+                        "tertiary": "#824f5e",
+                        "surface-tint": "#006a6a",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary": "#79582b",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#002020",
+                        "surface": "#f1fbff",
+                        "primary-fixed-dim": "#61d8d8",
+                        "on-tertiary-fixed": "#340e1b",
+                        "surface-variant": "#c4e8f5",
+                        "on-surface": "#001f27",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#2a1800",
+                        "on-background": "#001f27",
+                        "outline": "#6d7a79",
+                        "inverse-on-surface": "#daf5ff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bcc9c8",
+                        "surface-container": "#d2f3ff",
+                        "on-secondary-container": "#78572a",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f1fbff",
+                        "surface-dim": "#bce0ec",
+                        "primary": "#006767",
+                        "background": "#f1fbff",
+                        "tertiary-fixed-dim": "#f6b5c6",
+                        "on-primary-fixed-variant": "#004f4f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "xl": "48px",
+                        "unit": "4px",
+                        "margin": "24px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Lexend"],
+                        "label-caps": ["Space Mono"],
+                        "body-lg": ["Lexend"],
+                        "h3": ["Space Mono"],
+                        "h2": ["Space Mono"],
+                        "h1": ["Space Mono"],
+                        "button": ["Space Mono"],
+                        "body-sm": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "0em", "fontWeight": "700"}],
+                        "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .pixel-shadow {
+            box-shadow: 4px 4px 0px 0px #10353e;
+        }
+        .pixel-shadow-sm {
+            box-shadow: 2px 2px 0px 0px #10353e;
+        }
+        .pixel-press:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #10353e;
+        }
+        .pixel-border {
+            border: 1px solid #10353e;
+        }
+        .pixel-corners::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 4px;
+            height: 4px;
+            background: #10353e;
+        }
+        .pixel-corners::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 4px;
+            height: 4px;
+            background: #10353e;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-inverse-surface/60 backdrop-blur-md border-b border-outline-variant flex justify-between items-center px-margin py-sm max-w-full">
+    <div class="flex items-center gap-md">
+        <span class="font-h3 text-h3 text-on-primary-container tracking-tighter">ArtArchive</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-lg">
+        <a class="font-button text-button text-primary-fixed border-b-2 border-primary-fixed pb-1 active:translate-y-0.5 transition-all" href="#">Gallery</a>
+        <a class="font-button text-button text-on-surface-variant hover:text-primary-fixed transition-colors duration-200" href="#">Exhibitions</a>
+        <a class="font-button text-button text-on-surface-variant hover:text-primary-fixed transition-colors duration-200" href="#">Archives</a>
+        <a class="font-button text-button text-on-surface-variant hover:text-primary-fixed transition-colors duration-200" href="#">Community</a>
+    </nav>
+    <div class="flex items-center gap-md">
+        <button class="flex items-center justify-center text-primary-fixed hover:opacity-80 transition-opacity">
+            <span class="material-symbols-outlined">favorite</span>
+        </button>
+        <button class="bg-primary px-lg py-xs font-button text-button text-on-primary pixel-border pixel-shadow-sm pixel-press">
+            Sign In
+        </button>
+    </div>
+</header>
+<main class="pt-24 px-margin pb-xl max-w-7xl mx-auto">
+    <!-- Hero Section -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-lg mb-xl">
+        <div class="lg:col-span-8 relative aspect-[16/9] pixel-border pixel-shadow bg-surface-container overflow-hidden">
+            <img alt="Canvas Image Hero" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhM7JOJ3LW-W_5X9I77V3E_TmsxMsaZRQt8NuwFNBGCVJiyfYZqjrXArIaDWAyE0YO2oPYv597_vFO39pni-e9cnqlqowVDigetD5brUygzeD8i2tMRyQWQvRVjfX2SiazuqWZgkNavZOy4YezOxT2UZcLgFqVnYA9f0vHUwJVjvQDeef7-FUIvWo-LqHqO6yXJq03HDxwyYQkbiWb9YCSIhBc8ooEUYTtcr5X0wmpi10gRnChZHn5ocUrT"/>
+            <div class="absolute bottom-0 left-0 p-lg bg-inverse-surface/90 text-on-primary-container w-full border-t pixel-border">
+                <p class="font-label-caps text-label-caps mb-xs uppercase tracking-widest">Featured Collection</p>
+                <h1 class="font-h1 text-h1">THE PIXELATED RENAISSANCE</h1>
+            </div>
+        </div>
+        <div class="lg:col-span-4 flex flex-col gap-lg">
+            <div class="flex-1 pixel-border p-lg bg-tertiary-container text-on-tertiary-container relative overflow-hidden group">
+                <div class="relative z-10">
+                    <h2 class="font-h3 text-h3 mb-sm">Create New Exhibit</h2>
+                    <p class="font-body-sm text-body-sm opacity-90 mb-md">Curate your own digital wing in our archival corridors. Use our retro-tools to build a legacy.</p>
+                    <button class="bg-inverse-surface text-on-primary-container px-md py-xs pixel-border font-button text-button pixel-press">Launch Studio</button>
+                </div>
+                <div class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">palette</span>
+                </div>
+            </div>
+            <div class="pixel-border p-md bg-secondary-container text-on-secondary-container">
+                <div class="flex justify-between items-center mb-sm">
+                    <span class="font-label-caps text-label-caps">LIVE FEED</span>
+                    <div class="w-2 h-2 bg-error rounded-full animate-pulse"></div>
+                </div>
+                <ul class="space-y-sm">
+                    <li class="flex items-center gap-sm font-body-sm border-b border-on-secondary-container/10 pb-xs">
+                        <span class="material-symbols-outlined text-[18px]">history</span>
+                        <span>@retro_fan added 'VGA Horizons'</span>
+                    </li>
+                    <li class="flex items-center gap-sm font-body-sm border-b border-on-secondary-container/10 pb-xs">
+                        <span class="material-symbols-outlined text-[18px]">favorite</span>
+                        <span>'Pixel Muse' was favorited 42 times</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Bento Grid -->
+    <section class="mb-xl">
+        <div class="flex justify-between items-end mb-lg">
+            <div>
+                <span class="font-label-caps text-label-caps text-primary">CURATED ARCHIVE</span>
+                <h2 class="font-h2 text-h2">Recent Discoveries</h2>
+            </div>
+            <a class="font-button text-button flex items-center gap-xs border-b-2 border-primary" href="#">View All <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+            <!-- Large Tile -->
+            <div class="md:col-span-2 md:row-span-2 pixel-border group relative aspect-square overflow-hidden bg-surface-container-high">
+                <img alt="Bento Tile 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ugS7iLTOIBopr7jiFnFf8TGrhEl5Btqvuk7mU7_BN52gsURjzGjc7Z-Hk9U7HFCxAb9GZ_hBZMsLjjxUCkSzJwUTEm6Z0UGkwQPM0tZiv3x9KA8hbcOJnE6ri9bvOL5wsxfyOLNzbzNMx7ek8K5LEcn3_95h0blydTpeX8nz_pM8RRyZhuFibXgpWG8lhz8DcvtaXuER54FcFB2c_C-Vbc46Q4MFQyTs4QiHb2GS49xcuuPm2CxzEGZ_jY-fk4P5-o26xUZXmX-4lQ"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-lg flex flex-col justify-end">
+                    <h3 class="font-h3 text-h3 text-on-primary-container">Ethereal Bitscape</h3>
+                    <p class="font-body-sm text-on-primary-container/80">Digital Artifact #12287</p>
+                </div>
+            </div>
+            <!-- Small Tiles -->
+            <div class="pixel-border aspect-square bg-surface-container-low relative overflow-hidden group">
+                <img alt="Bento Tile 2" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida/ADBb0ugTcN7fqe3xjV45J1Q2DwhDUsgh0m8Z1wwfCVNzi9Ls3r-rJfU_wn-XSJ_Au0V0KuiNtkVWdqPSQlg6G8mOQgq4o0Z_r3O-ZJnM5j8fsxcsCyCzuQhl-vvv0bM1h8TtLLR1jkeaLPoCrzXV_HBS5b3iwftuhiNja5vb7k1aFCXwdZOYR64H0vnrqhzbDb_VELpE7c_6IS3I2501ErxYyryJVnwex2GD31e3F9wVcVRxO0iMtPXqxDnMj1wa"/>
+                <div class="absolute top-2 right-2 pixel-border bg-background px-xs font-label-caps text-[10px]">NEW</div>
+            </div>
+            <div class="pixel-border aspect-square bg-surface-container-low relative overflow-hidden group">
+                <img alt="Bento Tile 3" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida/ADBb0uiXP_8yOoG0atEQxMQ7WxZwyA0pTg_22UsIsR_DfjdAStl3PFgbwNYO5j57F_3hzx-HdPxlbvyISt7f66hwSaO12_pbvqoKQpXCy5xmw8pen25o5Jpzw47e9IisJ9gtYkDpj8EXwmu_6AHCn6iwXbOwVs31gIj8ZKE58u2Lmzo6e5mvEUvoRbTZr2f2KeumnAoT1BUR9KHwQ-3o-pr_5pWKQQSHwtPufrGGaC19bziREHyNNY6uoROtVk6f"/>
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            <div class="pixel-border aspect-square bg-surface-container-low relative overflow-hidden group">
+                <img alt="Bento Tile 4" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida/ADBb0uiRpamr4U3IO7kvdIY8jBdX4FdDriHtSsRojbsYsiSzyrHqfOHyvrV36--D58sN0dOjrp4iFSsA55zP1EsbrQL7ehiPbusUoz0mAUJ1RkniHg0YaC-d_H25oxwymFjlFZq4-dlMybsuq5G26xam7cZ0fmwOL6-thfWAEbRzfhIU_Gzo2CmT6dQYDUxcKli_BfAZbg9K47NRSsr8c7KojHXacYSJwKkN3O4VmYU5-leeOt4VCm4I_276JzE"/>
+            </div>
+            <div class="pixel-border aspect-square bg-surface-container-low relative overflow-hidden group">
+                <img alt="Bento Tile 5" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida/ADBb0ugJFmIoHLmf2DW98y26sOAys_Ilyb-12slDEJDCEdYVR58dvGckSStVvPbhirFOHydtBOj4XZ1jbrRTQyCfm0tDoSBvAOG-CGOcWRSCxxkN9onNY3LFLNy0VoVvtwJ48llxoZ9VIjabz_613KmbzFBueavbrf9ixp46UCTiWvcrq0Kt35StPu94McUUJQogwdenPrvYkGHlM133nEId4nlRCLmAxNEyfMisZEjVeepwMchPUFQy4YN4sYcO"/>
+            </div>
+        </div>
+    </section>
+    <!-- Asymmetric Detail Section -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center mb-xl">
+        <div class="relative">
+            <div class="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-primary z-10"></div>
+            <div class="pixel-border pixel-shadow overflow-hidden">
+                <img alt="Wide Detail Image" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugK_lv-AWX6Zzd5tqnZcHQ4FDdFi2EZdtN9yecDrnpxAq6Dkp9QK8cTXIq9u3ZoF9kOYCSmoiubvxLUoCIT1SYs5fB6OwWugBYYgnkiMBaIYgfMToJScJ2O8TaBZW4wdKhaNjc4z5Wv0WIV6yEhUEXdxA7AsDZXp4wri_U9KOfSrXO_hwE313V4ALtp1-27gO66RKqa1myHPl2N0VcoJVAeLdrrIavrxiRl5v11cAywtV67E6g1TaAIT5s"/>
+            </div>
+            <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-secondary z-10"></div>
+        </div>
+        <div class="lg:pl-xl">
+            <span class="font-label-caps text-label-caps text-secondary block mb-sm">ARTIST SPOTLIGHT</span>
+            <h2 class="font-h2 text-h2 mb-md">Vincenzo Bit</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-lg leading-relaxed">
+                A pioneer in high-fidelity pixel reconstruction, Vincenzo utilizes ancient CRT rendering algorithms to breathe life into modern digital canvases. His work bridges the gap between the tactile noise of the 90s and the clinical precision of today.
+            </p>
+            <div class="flex gap-md">
+                <button class="bg-primary text-on-primary px-lg py-sm font-button text-button pixel-border pixel-shadow pixel-press">Explore Collection</button>
+                <button class="bg-surface text-on-surface px-lg py-sm font-button text-button pixel-border pixel-press">Bio</button>
+            </div>
+        </div>
+    </section>
+    <!-- Horizontal Scroll Cards -->
+    <section class="mb-xl overflow-hidden">
+        <h2 class="font-h2 text-h2 mb-lg px-2 border-l-4 border-tertiary">Upcoming Exhibitions</h2>
+        <div class="flex gap-lg overflow-x-auto pb-lg snap-x no-scrollbar">
+            <div class="min-w-[300px] snap-start pixel-border bg-surface-container-lowest">
+                <div class="aspect-[1.64] overflow-hidden border-b pixel-border">
+                    <img alt="Exhibition 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uh2XrwHQwWvJhvx65y1Tm-WUsywOaI3bEJ2gDSKD7FDG9yNkAGTZiId3Y3ls_6sRCr_JDDsRD4lpN9ZZN3aYNeD1cpgehNt1TSh5vOOMRW6VlmuTI8cSuVrbJeShkTwR0LzrVT2c4JW5a62geSemqkDHjGI8nRkB4t5nwMuNlGSB4GVPa8FzU6EyBNtkoauMMrOPzuLdI6B7n2hGELEiHne-gHUqG3XSXPeHsTRL8heuONfNXRCPgbYqDN7j1S8WnmuBwf8BqEo5Q"/>
+                </div>
+                <div class="p-md">
+                    <p class="font-label-caps text-label-caps text-primary mb-xs">NOV 24 - DEC 12</p>
+                    <h4 class="font-h3 text-h3 text-on-surface truncate">CRT Nostalgia</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">A deep dive into scanlines and phosphor glow.</p>
+                    <button class="w-full py-xs pixel-border font-button text-button hover:bg-inverse-surface hover:text-on-primary-container transition-colors">Notify Me</button>
+                </div>
+            </div>
+            <div class="min-w-[300px] snap-start pixel-border bg-surface-container-lowest">
+                <div class="aspect-[1.64] overflow-hidden border-b pixel-border">
+                    <img alt="Exhibition 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugZP6__ZJ8fWO-Jy6RfnAkukGdGClHvUxiEIkAUtF0FP5ana4ccVLSGmUK4JDE8okD_dX-XCMxZoBegE73Hfcf-M_eUDkqBHSIoHNLyVhVL02_Iu6vB-lKitRUqK7rlRgOGp2jhIRADX-l57_17HfVcmAxAOa-5rID6W7bEmPe9JZ1IqBBXf0sgXdieO0BxNfvh3KB00P7zhgxSRv7gcZtvp1ETXje31_BZsVuGFGd5FndIgafmnWUSDaMSHPXBqih3VnSNaIuFZvQ"/>
+                </div>
+                <div class="p-md">
+                    <p class="font-label-caps text-label-caps text-primary mb-xs">DEC 15 - JAN 05</p>
+                    <h4 class="font-h3 text-h3 text-on-surface truncate">Vector Dreams</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Exploring the math behind the beauty.</p>
+                    <button class="w-full py-xs pixel-border font-button text-button hover:bg-inverse-surface hover:text-on-primary-container transition-colors">Notify Me</button>
+                </div>
+            </div>
+            <div class="min-w-[300px] snap-start pixel-border bg-surface-container-lowest">
+                <div class="aspect-[1.64] overflow-hidden border-b pixel-border">
+                    <img alt="Exhibition 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugVw_4UXPl3gmHgz3YQspcfoNTBUpBJcSHiIpw17fPvTlJeFiDRt0YiVdTqJlbb9izgOfNq5vhDBe0I61ojLuAhR0iu9n7JmR9LxFCxXB-iHSEuF8-urfvKUig1MOkl3eOVKNd89C5F4wMx09nyYheolQCz-dz62zOW57mhT0fQN5BG45Z7gQU9l_iO_SlN4hVO6XUre1L6RNhz-YVmu-NjS_9Cgu6iBmUV6QMY4M2IuVgZRrpP6TBgKaqXF7EvXQmx0_7WukcAQA"/>
+                </div>
+                <div class="p-md">
+                    <p class="font-label-caps text-label-caps text-primary mb-xs">JAN 10 - FEB 22</p>
+                    <h4 class="font-h3 text-h3 text-on-surface truncate">Lo-Fi High-Def</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">The beauty of intentional resolution caps.</p>
+                    <button class="w-full py-xs pixel-border font-button text-button hover:bg-inverse-surface hover:text-on-primary-container transition-colors">Notify Me</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface border-t border-outline-variant">
+    <div class="flex flex-col md:flex-row justify-between items-center p-lg gap-md max-w-7xl mx-auto">
+        <div class="flex flex-col gap-xs">
+            <span class="font-label-caps text-label-caps text-on-surface">ARTARCHIVE</span>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 ArtArchive. Designed for the curious.</p>
+        </div>
+        <div class="flex gap-lg">
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary-container transition-opacity opacity-80 hover:opacity-100" href="#">Privacy</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary-container transition-opacity opacity-80 hover:opacity-100" href="#">Terms</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary-container transition-opacity opacity-80 hover:opacity-100" href="#">Contact</a>
+        </div>
+        <div class="flex gap-sm">
+            <div class="w-8 h-8 pixel-border flex items-center justify-center hover:bg-secondary-fixed cursor-pointer transition-colors">
+                <span class="material-symbols-outlined text-[20px]">share</span>
+            </div>
+            <div class="w-8 h-8 pixel-border flex items-center justify-center hover:bg-secondary-fixed cursor-pointer transition-colors">
+                <span class="material-symbols-outlined text-[20px]">mail</span>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Floating Pixel Cluster Decoration (Fixed) -->
+<div class="fixed bottom-margin right-margin pointer-events-none opacity-40">
+    <div class="grid grid-cols-2 gap-1">
+        <div class="w-2 h-2 bg-primary"></div>
+        <div class="w-2 h-2 bg-secondary"></div>
+        <div class="w-2 h-2 bg-tertiary"></div>
+        <div class="w-2 h-2 bg-inverse-surface"></div>
+    </div>
+</div>
+</body></html>

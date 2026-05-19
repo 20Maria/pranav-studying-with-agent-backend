@@ -16,6 +16,7 @@
 
 ## Help Level
 
+- **Hints Only**: Never provide the full corrected code unless explicitly requested or after multiple failed attempts where a hint isn't enough.
 - Give one precise correction target at a time.
 - Reduce friction quickly after genuine effort appears.
 - Separate concept explanation from syntax reminders.

@@ -1,0 +1,17 @@
+h2 {
+    color: #001f27;
+    display: inline-block;
+    border: solid 1px black;
+}
+
+#output {
+    background-color: darkgray;
+}
+
+text {
+    display: block;
+}
+
+p {
+    display: block;
+}

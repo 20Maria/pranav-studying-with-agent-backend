@@ -106,14 +106,14 @@
 - The student stated that `unittest`, `class`, `self`, `assertEqual`, and cross-file imports are not yet known concepts.
 - Updated `next_task.md` from independent test writing to a fundamentals-first primer on test-file structure.
 
-## [2026-04-07] migration | added student lesson layer
+## [2026-05-18] ingest | web_baseline completed
 
-- Created `student_lessons/` with its own `AGENTS.md`, `README.md`, and `index.md`.
-- Added reusable student-facing lesson files for dictionary guards and loop flow, list order with `append()`, and `unittest` basics.
-- Updated the root `AGENTS.md` and `README.md` so the repo now explicitly tracks a student-facing lesson layer alongside teacher-state and historical observations.
+- Student completed Lektion 12 (CSS) in `web_baseline/`.
+- Code shows mastery of basic DOM manipulation, `fetch`, and external CSS.
+- Identified minor HTML/CSS cleanup items (link placement, tag-name selectors).
 
-## [2026-04-07] ingest | student requested durable lesson notes
+## [2026-05-18] next_task | searching local JSON data
 
-- The student asked for a `student_lessons/` folder so taught concepts can be stored in markdown and reused later.
-- Updated the teaching strategy and work-habits pages to reflect the preference for a reusable lesson shelf.
-- Updated `next_task.md` so the immediate next move is to read `student_lessons/unittest_basics.md` and explain the core concepts back.
+- Assigned a follow-up task to `js_read_file.js`.
+- The goal is to find a specific user by ID and access nested properties.
+- This reinforces the connection between file I/O and data manipulation.
